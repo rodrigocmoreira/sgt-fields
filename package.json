@@ -1,0 +1,30 @@
+{
+  "name": "sgt-fields",
+  "version": "1.0.0",
+  "description": "Find the property in your object with Sargent Fields",
+  "main": "index.js",
+  "scripts": {
+    "mocha": "_mocha --",
+    "coverage": "istanbul cover --print both node_modules/mocha/bin/_mocha --",
+    "test": "npm run coverage",
+    "posttest": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigocmoreira/sgt-fields.git"
+  },
+  "keywords": [
+    "fields"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigocmoreira/sgt-fields/issues"
+  },
+  "homepage": "https://github.com/rodrigocmoreira/sgt-fields#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.1"
+  }
+}
