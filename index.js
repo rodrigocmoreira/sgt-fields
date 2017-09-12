@@ -12,8 +12,15 @@ const sgtFields = (() => {
    }, object);
  };
 
+ const set = (object, key, value) => {
+   if (!key || typeof key !== 'string') {
+     return object;
+   }
+ };
+
  return {
-   get
+   get,
+   set
  };
 })();
 
