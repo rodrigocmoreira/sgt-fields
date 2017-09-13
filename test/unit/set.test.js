@@ -2,7 +2,7 @@ const ROOT_PATH = process.cwd();
 const { set } = require(ROOT_PATH);
 const { assert } = require('chai');
 
-describe.only('set field object', () => {
+describe('set field object', () => {
   let user;
 
   beforeEach(() => {
@@ -31,6 +31,8 @@ describe.only('set field object', () => {
     const result = set(user, 'info.address.city', 'new city');
     assert.strictEqual(result.info.address.city, 'new city');
   });
+
+
 
 
 
