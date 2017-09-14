@@ -26,7 +26,7 @@ var object = {
     }
   }
 }
-var result = sgtFields.get(object, 'c');
+var result = sgtFields.get(object, 'a.b.c');
 //=> result = 'test'
 ```
 
