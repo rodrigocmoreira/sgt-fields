@@ -16,20 +16,25 @@ const sgtFields = (() => {
    if (!key || typeof key !== 'string') {
      return object;
    }
-   let actual;
-   const keys = key.split('.').reverse();
-   const result = keys.reduce((previous, current) => {
-     actual = current;
-     if (Object.keys(previous).length === 0 && current) {
+
+   const keys = key.split('.');
+   const lastIndex = keys.length - 1;
+   const result = object || {};
+
+   keys.reduce((previous, current, index) => {
+     console.log(previous);
+     if (index === lastIndex) {
        previous[current] = value;
-       return previous;
+       return previous[current];
      }
-     let returnLast = {};
-     returnLast[current] = previous;
-     return returnLast;
-   }, {});
-   object[actual] = result[actual];
-   return object;
+     if (previous[current]) {
+       return previous[current];
+     }
+     previous[current] = {};
+     return previous[current];
+   }, result);
+
+   return result;
  };
 
  return {
