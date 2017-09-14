@@ -22,7 +22,6 @@ const sgtFields = (() => {
    const result = object || {};
 
    keys.reduce((previous, current, index) => {
-     console.log(previous);
      if (index === lastIndex) {
        previous[current] = value;
        return previous[current];
