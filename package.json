@@ -1,6 +1,6 @@
 {
   "name": "sgt-fields",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Find the property in your object with Sargent Fields",
   "main": "index.js",
   "scripts": {
