@@ -38,9 +38,6 @@ describe('set field object', () => {
     assert.deepEqual(result, resultExpected);
   });
 
-
-
-  // first parameter invalid
   it('first parameter to equal "undefined" is invalid.', () => {
     const result = set(undefined, 'info.address.city', 'new city');
     assert.deepEqual(result, { info: { address: { city: 'new city' } } });
@@ -51,16 +48,31 @@ describe('set field object', () => {
     assert.deepEqual(result, { info: { address: { city: 'new city' } } });
   });
 
-  it.only('first parameter to equal "string" is invalid.', () => {
+  it('first parameter to equal "string" is invalid.', () => {
     const result = set('test', 'info.address.city', 'new city');
-    assert.deepEqual(result, { info: { address: { city: 'new city' } } });
+    assert.strictEqual(result, 'test');
   });
 
+  it('first parameter to equal "array" is invalid.', () => {
+    const result = set([1, 2, 3], 'info.address.city', 'new city');
+    assert.deepEqual(result, [1, 2, 3]);
+  });
 
+  it('first parameter to equal "boolean" is invalid.', () => {
+    const result = set(true, 'info.address.city', 'new city');
+    assert.isTrue(result);
+  });
 
+  it('first parameter to equal "number" is invalid.', () => {
+    const result = set(23.6, 'info.address.city', 'new city');
+    assert.strictEqual(result, 23.6);
+  });
 
+  it('first parameter to equal "function" is invalid.', () => {
+    const result = set(() => { return true }, 'info.address.city', 'new city');
+    assert.isFunction(result);
+  });
 
-  // second parameter invalid
   it('return object without modifying it, undefined second parameter.', () => {
     const result = set(user);
     assert.deepEqual(result, user);
@@ -84,5 +96,40 @@ describe('set field object', () => {
   it('return object without modifying it, second parameter different of "string". (null)', () => {
     const result = set(user, true);
     assert.deepEqual(result, user);
+  });
+
+  it('third parameter to equal "array".', () => {
+    const result = set({}, 'info.address.city', [1, 2, 3]);
+    assert.deepEqual(result, { info: { address: { city: [1, 2, 3] } } });
+  });
+
+  it('third parameter to equal "number".', () => {
+    const result = set({}, 'info.address.city', 1);
+    assert.deepEqual(result, { info: { address: { city: 1 } } });
+  });
+
+  it('third parameter to equal "string".', () => {
+    const result = set({}, 'info.address.city', 'test');
+    assert.deepEqual(result, { info: { address: { city: 'test' } } });
+  });
+
+  it('third parameter to equal "boolean".', () => {
+    const result = set({}, 'info.address.city', true);
+    assert.deepEqual(result, { info: { address: { city: true } } });
+  });
+
+  it('third parameter to equal "object".', () => {
+    const result = set({}, 'info.address.city', { a: { b: 'b' } });
+    assert.deepEqual(result, { info: { address: { city: { a: { b: 'b' } } } } });
+  });
+
+  it('third parameter to equal "undefined".', () => {
+    const result = set({}, 'info.address.city');
+    assert.deepEqual(result, { info: { address: { city: undefined } } });
+  });
+
+  it('third parameter to equal "null".', () => {
+    const result = set({}, 'info.address.city', null);
+    assert.deepEqual(result, { info: { address: { city: null } } });
   });
 });
