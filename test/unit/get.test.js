@@ -7,8 +7,8 @@ describe('get field object', () => {
     name: 'Sargent Fields',
     age: 1,
     info: {
-      adress: {
-        name: 'name adress',
+      address: {
+        name: 'name address',
         number: 55
       },
       phone: {
