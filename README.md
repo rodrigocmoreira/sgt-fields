@@ -56,7 +56,7 @@ var object = {
   a: {
   }
 };
-var result = sgtFields.get(object, 'a.b.c', 'test');
+var result = sgtFields.set(object, 'a.b.c', 'test');
 //=> result = { a: { b: { c: 'test' } } }
 //=> object = { a: { b: { c: 'test' } } }
 ```
