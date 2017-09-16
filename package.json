@@ -14,7 +14,7 @@
     "url": "git+https://github.com/rodrigocmoreira/sgt-fields.git"
   },
   "keywords": [
-    "fields"
+    "fields", "object", "get", "set", "property", "array", "field"
   ],
   "author": "",
   "license": "ISC",
