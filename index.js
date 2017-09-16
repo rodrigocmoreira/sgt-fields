@@ -1,4 +1,5 @@
 const sgtFields = (() => {
+
  const get = (object, key) => {
    if (!key || typeof key !== 'string') {
      return undefined;

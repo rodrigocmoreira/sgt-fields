@@ -25,17 +25,37 @@ var object = {
       c: 'test'
     }
   }
-}
+};
 var result = sgtFields.get(object, 'a.b.c');
 //=> result = 'test'
 ```
 
+Get property on object (supported array):
+
+```js
+var object = {
+  user: {
+    fullName: [{
+      name: 'first name'
+    }, {
+      name: 'second name'
+    }]
+  }
+};
+var resultFirstName = sgtFields.get(object, 'user.fullName.0.name');
+//=> resultFirstName = 'first name'
+
+var resultSecondName = sgtFields.get(object, 'user.fullName.1.name');
+//=> resultSecondName = 'second name'
+```
+
 Set or add property on object:
+
 ```js
 var object = {
   a: {
   }
-}
+};
 var result = sgtFields.set(object, 'a.b.c', 'test');
 //=> result = { a: { b: { c: 'test' } } }
 //=> object = { a: { b: { c: 'test' } } }
