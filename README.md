@@ -1,4 +1,4 @@
-# sgt-fields
+# sgt-fields [![NPM version](https://img.shields.io/npm/v/sgt-fields.svg?style=flat)](https://www.npmjs.com/package/sgt-fields)  [![Build Status](https://travis-ci.org/rodrigocmoreira/sgt-fields.svg?branch=master)](https://travis-ci.org/rodrigocmoreira/sgt-fields) [![NPM monthly downloads](https://img.shields.io/npm/dm/sgt-fields.svg?style=flat)](https://www.npmjs.com/package/sgt-fields)  [![NPM total downloads](https://img.shields.io/npm/dt/sgt-fields.svg?style=flat)](https://www.npmjs.com/package/sgt-fields)
 
 Find the property in your object with Sargent Fields
 
