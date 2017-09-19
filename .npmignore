@@ -4,6 +4,8 @@ logs
 npm-debug.log*
 
 .gitignore
-
 .sonarlint
+.travis.yml
+
 coverage/
+test/
