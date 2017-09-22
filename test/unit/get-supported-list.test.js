@@ -5,7 +5,7 @@ const { assert } = require('chai');
 describe('get field supported list object', () => {
   const user = {
     info: {
-      phones: [{
+      phone: [{
         code: '11',
         number: '3697841231'
       }, {
@@ -16,13 +16,13 @@ describe('get field supported list object', () => {
   };
 
   it('Return "string" of fields from given position of array.', () => {
-    const result = get(user, 'info.phones.0.code');
+    const result = get(user, 'info.phone.0.code');
     assert.strictEqual(result, '11');
   });
 
   it('Return "object" of fields from given position of array.', () => {
-    const result = get(user, 'info.phones.1');
-    assert.deepEqual(result, user.info.phones[1]);
+    const result = get(user, 'info.phone.1');
+    assert.deepEqual(result, user.info.phone[1]);
   });
 
   it('Return undefined. Invalid position array.', () => {

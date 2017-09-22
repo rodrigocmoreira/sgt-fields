@@ -18,7 +18,7 @@ describe('get object from a list of fields', () => {
     }
   }
 
-  it.only('Return a newObject from fields inside a list.', () => {
+  it('Return a newObject from fields inside a list.', () => {
     const expectedObject = {
       name: 'Sargent Fields',
       age: 1,
@@ -28,7 +28,26 @@ describe('get object from a list of fields', () => {
         }
       }
     };
+    const resultObject = getObject(user, [ 'name', 'age', 'info.phone.code' ]);
+    assert.deepEqual(resultObject, expectedObject);
+  });
+
+  it('Return a newObject from fields inside a list. But one item of the list is not found', () => {
+    const expectedObject = {
+      name: 'Sargent Fields',
+      age: 1
+    };
     const resultObject = getObject(user, [ 'name', 'age', 'info.phones.code' ]);
-    assert.strictEqual(expectedObject, resultObject);
+    assert.deepEqual(resultObject, expectedObject);
+  });
+
+  it('Return undefined when list is null.', () => {
+    const resultObject = getObject(user, null);
+    assert.isUndefined(resultObject);
+  });
+
+  it('Return undefined when list is empty.', () => {
+    const resultObject = getObject(user, []);
+    assert.isUndefined(resultObject);
   });
 });

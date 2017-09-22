@@ -1,5 +1,4 @@
 const sgtFields = (() => {
-
   const get = (object, key) => {
     if (!key || typeof key !== 'string') {
       return undefined;
@@ -10,20 +9,6 @@ const sgtFields = (() => {
         return previous[current];
       }
       return undefined;
-    }, object);
-  };
-
-  const getObject = (object, list) => {
-    if (!list || typeof list != Array) {
-      return undefined;
-    }
-
-    const newObject = {};
-    return list.reduce((previous, current) => {
-      if (previous && current) {
-
-        newObject[] = previous[current];
-      }
     }, object);
   };
 
@@ -53,6 +38,22 @@ const sgtFields = (() => {
     }, result);
 
     return result;
+  };
+
+  const getObject = (object, list) => {
+    if (!list || list.length < 1) {
+      return undefined;
+    }
+
+    const newObject = {};
+
+    list.forEach((element) => {
+      const current = get(object, element);
+      if(current) {
+        set(newObject, element, current);
+      }
+    });
+    return newObject;
   };
 
   return {
