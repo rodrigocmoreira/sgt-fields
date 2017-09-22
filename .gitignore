@@ -12,4 +12,5 @@ node_modules/
 .sonarlint
 coverage/
 
-.vscode
+.vscode/
+package-lock.json
