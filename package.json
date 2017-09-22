@@ -5,8 +5,9 @@
   "main": "sgt-fields.js",
   "scripts": {
     "mocha": "_mocha --",
+    "istanbul": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js",
     "coverage": "istanbul cover --print both node_modules/mocha/bin/_mocha --",
-    "test": "npm run coverage",
+    "test": "set NODE_ENV=test && npm run istanbul",
     "posttest": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
   },
   "repository": {
@@ -30,7 +31,9 @@
   "homepage": "https://github.com/rodrigocmoreira/sgt-fields#readme",
   "devDependencies": {
     "chai": "^4.1.2",
+    "coveralls": "^2.13.1",
     "istanbul": "^0.4.5",
-    "mocha": "^3.5.1"
+    "mocha": "^3.5.1",
+    "mocha-lcov-reporter": "^1.3.0"
   }
 }
