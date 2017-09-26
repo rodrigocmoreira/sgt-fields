@@ -1,15 +1,4 @@
 const sgtFields = (() => {
-  const each = (object, fn, recursive) => {
-    if (Array.isArray(object)) {
-      return object.forEach(fn);
-    }
-    if (typeof object === 'object' && object !== null) {
-      return loop(object, null, recursive, fn);
-    } else {
-      return undefined;
-    }
-  };
-
   const loop = (obj, node, recursive, fn) => {
     Object.keys(obj).forEach((item) => {
       if (recursive && typeof obj[item] === 'object') {
@@ -18,6 +7,16 @@ const sgtFields = (() => {
       return fn(`${node !== null ? (node + '.') : ''}${item}`, obj[item]);
     });
   }
+
+  const each = (object, fn, recursive) => {
+    if (Array.isArray(object)) {
+      return object.forEach(fn);
+    }
+    if (!object) {
+      return undefined;
+    } 
+    return loop(object, null, recursive, fn);
+  };
 
   const get = (object, key) => {
     if (!key || typeof key !== 'string') {
