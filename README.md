@@ -64,3 +64,21 @@ var result = sgtFields.set(object, 'a.b.c', 'test');
 //=> result = { a: { b: { c: 'test' } } }
 //=> object = { a: { b: { c: 'test' } } }
 ```
+
+Loop through each property on object:
+
+```js
+var object = {
+  user: {
+    personalInfo: {
+      name: 'first name',
+      email: 'second name'
+    }
+  }
+};
+
+sgtFields.each(object, (field, value) => {
+  console.log(field, value);
+});
+
+```

@@ -1,4 +1,23 @@
 const sgtFields = (() => {
+  const loop = (obj, node, recursive, fn) => {
+    Object.keys(obj).forEach((item) => {
+      if (recursive && typeof obj[item] === 'object') {
+        return loop(obj[item], `${node !== null ? (node + '.') : ''}${item}`, recursive, fn);
+      }
+      return fn(`${node !== null ? (node + '.') : ''}${item}`, obj[item]);
+    });
+  }
+
+  const each = (object, fn, recursive) => {
+    if (Array.isArray(object)) {
+      return object.forEach(fn);
+    }
+    if (!object) {
+      return undefined;
+    } 
+    return loop(object, null, recursive, fn);
+  };
+
   const get = (object, key) => {
     if (!key || typeof key !== 'string') {
       return undefined;
@@ -57,6 +76,7 @@ const sgtFields = (() => {
   };
 
   return {
+    each,
     get,
     getObject,
     set
