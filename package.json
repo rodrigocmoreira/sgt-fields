@@ -5,8 +5,7 @@
   "main": "sgt-fields.js",
   "scripts": {
     "mocha": "_mocha --",
-    "istanbul": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js",
-    "coverage": "istanbul cover --print both node_modules/mocha/bin/_mocha --",
+    "istanbul": "istanbul cover --print both node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js",
     "test": "set NODE_ENV=test && npm run istanbul",
     "posttest": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
   },
