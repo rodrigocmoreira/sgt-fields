@@ -12,7 +12,7 @@ cache:
     - "node_modules"
 
 script:
-  - "npm run-script test-on-travis"
+  - "npm test"
 
 addons:
   sonarcloud:
