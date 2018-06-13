@@ -18,9 +18,10 @@ describe('each field object', () => {
     }
   }
 
-  it(' object - return only root field names and values.', () => {
+  it.only(' object - return only root field names and values.', () => {
     let count = 0;
     each(user, (field, value) => {
+      console.log(field, value);
         assert.strictEqual(value, user[field]);
         assert.typeOf(value, typeof user[field])
         count++;

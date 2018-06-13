@@ -69,16 +69,18 @@ Loop through each property on object:
 
 ```js
 var object = {
-  user: {
-    personalInfo: {
-      name: 'first name',
-      email: 'second name'
-    }
+  name: 'Fields',
+  rank: 'Sgt',
+  personalInfo: {
+    phone: '987654321',
+    email: 'sgt-fields@sgt-fields.com'
   }
 };
 
 sgtFields.each(object, (field, value) => {
   console.log(field, value);
 });
-
+//=> name Fields
+//=> rank Sgt
+//=> personalInfo { phone: '987654321', email: 'sgt-fields@sgt-fields.com' }
 ```
