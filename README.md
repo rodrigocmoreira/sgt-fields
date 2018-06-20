@@ -2,7 +2,7 @@
 
 [![NPM](https://nodei.co/npm/sgt-fields.png)](https://nodei.co/npm/sgt-fields/)
 
-[![NPM version](https://img.shields.io/npm/v/sgt-fields.svg?style=flat)](https://www.npmjs.com/package/sgt-fields) [![Build Status](https://travis-ci.org/rodrigocmoreira/sgt-fields.svg?branch=master)](https://travis-ci.org/rodrigocmoreira/sgt-fields) [![NPM monthly downloads](https://img.shields.io/npm/dm/sgt-fields.svg?style=flat)](https://www.npmjs.com/package/sgt-fields) [![NPM total downloads](https://img.shields.io/npm/dt/sgt-fields.svg?style=flat)](https://www.npmjs.com/package/sgt-fields) [![Coverage Status](https://coveralls.io/repos/github/rodrigocmoreira/sgt-fields/badge.svg?branch=master)](https://coveralls.io/github/rodrigocmoreira/sgt-fields?branch=master)
+[![NPM version](https://img.shields.io/npm/v/sgt-fields.svg)](https://www.npmjs.com/package/sgt-fields) [![Build Status](https://travis-ci.org/rodrigocmoreira/sgt-fields.svg?branch=master)](https://travis-ci.org/rodrigocmoreira/sgt-fields) [![NPM monthly downloads](https://img.shields.io/npm/dm/sgt-fields.svg)](https://www.npmjs.com/package/sgt-fields) [![NPM total downloads](https://img.shields.io/npm/dt/sgt-fields.svg)](https://www.npmjs.com/package/sgt-fields) [![Coverage Status](https://coveralls.io/repos/github/rodrigocmoreira/sgt-fields/badge.svg?branch=master)](https://coveralls.io/github/rodrigocmoreira/sgt-fields?branch=master) [![Known Vulnerabilities](https://snyk.io/test/npm/sgt-fields/badge.svg)](https://snyk.io/test/npm/sgt-fields)
 
 Find the property in your object with Sargent Fields
 
@@ -11,7 +11,7 @@ Find the property in your object with Sargent Fields
 Install with [npm](https://www.npmjs.com/):
 
 ```sh
-$ npm install sgt-fields --save
+npm install sgt-fields --save
 ```
 
 ## Usage
@@ -69,16 +69,18 @@ Loop through each property on object:
 
 ```js
 var object = {
-  user: {
-    personalInfo: {
-      name: 'first name',
-      email: 'second name'
-    }
+  name: 'Fields',
+  rank: 'Sgt',
+  personalInfo: {
+    phone: '987654321',
+    email: 'sgt-fields@sgt-fields.com'
   }
 };
 
 sgtFields.each(object, (field, value) => {
   console.log(field, value);
 });
-
+//=> name Fields
+//=> rank Sgt
+//=> personalInfo { phone: '987654321', email: 'sgt-fields@sgt-fields.com' }
 ```
