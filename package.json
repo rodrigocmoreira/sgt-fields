@@ -2,7 +2,7 @@
   "name": "sgt-fields",
   "version": "1.2.1",
   "description": "Find the property in your object with Sargent Fields",
-  "main": "sgt-fields.js",
+  "main": "index.js",
   "scripts": {
     "mocha": "_mocha --",
     "istanbul": "istanbul cover --print both node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js",
@@ -22,8 +22,11 @@
     "array",
     "field"
   ],
-  "author": "",
+  "author": "Rodrigo Cardoso Moreira & Fernando Nardi",
   "license": "ISC",
+  "files": [
+    "lib/"
+  ],
   "bugs": {
     "url": "https://github.com/rodrigocmoreira/sgt-fields/issues"
   },
