@@ -1,6 +1,6 @@
 {
   "name": "sgt-fields",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Find the property in your object with Sargent Fields",
   "main": "index.js",
   "scripts": {
@@ -32,10 +32,10 @@
   },
   "homepage": "https://github.com/rodrigocmoreira/sgt-fields#readme",
   "devDependencies": {
-    "chai": "^4.1.2",
-    "coveralls": "^3.0.1",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.4",
     "istanbul": "^0.4.5",
-    "mocha": "^5.2.0",
+    "mocha": "^6.1.4",
     "mocha-lcov-reporter": "^1.3.0"
   }
 }
