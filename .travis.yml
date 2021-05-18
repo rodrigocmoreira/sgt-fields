@@ -2,7 +2,7 @@ dist: trusty
 sudo: required
 language: node_js
 node_js:
-  - "8.11.1"
+  - "14.17.0"
 install:
   - npm install
 cache:
